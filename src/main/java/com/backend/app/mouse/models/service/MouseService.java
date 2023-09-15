@@ -13,4 +13,10 @@ public interface MouseService {
 	public List<Mouse> findAll();
 	
 	public Mouse findById(Long id);
+	
+	public void deleteTodo(Long id);
+	
+	public void postTodo(Mouse mouse);
+	
+	public void putTodo(Mouse mouse);
 }

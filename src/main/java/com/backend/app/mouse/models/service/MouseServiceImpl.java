@@ -25,5 +25,28 @@ public class MouseServiceImpl implements MouseService {
 	public Mouse findById(Long id) {
 		return mouseDao.findById(id).orElse(null);
 	}
-
+	
+	@Override
+	public void deleteTodo(Long id) {
+		mouseDao.deleteById(id);
+	}
+	
+	@Override
+	public void postTodo(Mouse mouse) {
+		
+		mouse.setName(mouse.getName());
+		mouse.setMarca(mouse.getMarca());
+		mouseDao.save(mouse);
+		
+	}
+	
+	@Override
+	public void putTodo(Mouse mouse) {
+		
+		mouse.setName(mouse.getName());
+		mouse.setMarca(mouse.getMarca());
+		mouseDao.save(mouse);
+		
+	}
+	
 }
